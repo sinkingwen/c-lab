@@ -1,55 +1,67 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
+void shifter(int n);
+
+int main()
+{
 	int a, b, c;
-	int r = scanf("%d%d%d", &a, &b, &c);
-	if (a >= 90 && a <= 100) {
-		printf("A ");
-	}
-	else if (a >= 80 && a < 90) {
-		printf("B ");
-	}
-	else if (a >= 70 && a < 80) {
-		printf("C ");
-	}
-	else if (a >= 60 && a < 70) {
-		printf("D ");
-	}
-	else if (a < 60) {
-		printf("E ");
-	}
-	if (b >= 90 && b <= 100) {
-		printf("A ");
-	}
-	else if (b >= 80 && b < 90) {
-		printf("B ");
-	}
-	else if (b >= 70 && b < 80) {
-		printf("C ");
-	}
-	else if (b >= 60 && b < 70) {
-		printf("D ");
-	}
-	else if (b < 60) {
-		printf("E ");
-	}
-
-	if (c >= 90 && c <= 100) {
-		printf("A ");
-	}
-	else if (c >= 80 && c < 90) {
-		printf("B ");
-	}
-	else if (c >= 70 && c < 80) {
-		printf("C ");
-	}
-	else if (c >= 60 && c < 70) {
-		printf("D ");
-	}
-	else if (c < 60) {
-		printf("E ");
-	}
-	int average = (a + b + c) / 3;
-	printf("%d", average);
+	scanf("%d %d %d", &a, &b, &c);
+	shifter(a);
+	printf(" ");
+	shifter(b);
+	printf(" ");
+	shifter(c);
+	printf(" ");
+	printf("%d", (a + b + c) / 3);
 	return 0;
 }
+
+void shifter(int n)
+{
+	if (90 <= n && n <= 100)
+		printf("A");
+	if (80 <= n && n < 90)
+		printf("B");
+	if (70 <= n && n < 80)
+		printf("C");
+	if (60 <= n && n < 70)
+		printf("D");
+	if (n < 60)
+		printf("E");
+}
+/*
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+	char grade[4];
+	int score[3], i, average_score;
+	scanf("%d %d %d", &score[0], &score[1], &score[2]);
+	average_score = (int)((score[0] + score[1] + score[2]) / 3);
+	//grade[3] = '\0';
+
+	for (i = 0; i < 3; i++) {
+		if (score[i] >= 90 && score[i] <= 100) {
+			grade[i] = 'A';
+		}
+		else if (score[i] >= 80 && score[i] < 90) {
+			grade[i] = 'B';
+		}
+		else if (score[i] >= 70 && score[i] < 80) {
+			grade[i] = 'C';
+		}
+		else if (score[i] >= 60 && score[i] < 70) {
+			grade[i] = 'D';
+		}
+		else {
+			grade[i] = 'E';
+		}
+		putchar(grade[i]);
+		putchar(' ');
+	}
+
+	printf("%d", average_score);
+	
+	return 0;
+}
+*/
